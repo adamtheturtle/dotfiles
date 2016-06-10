@@ -11,10 +11,12 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'tacahiroy/ctrlp-funky'
-function! DoRemote(arg)
-  UpdateRemotePlugins
-endfunction
-Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+"Enable completion
+"See https://github.com/Valloric/YouCompleteMe#mac-os-x
+"for compilation requirements.
+Plug 'Valloric/YouCompleteMe'
+"Allow the use of `gc` to comment selected text.
+Plug 'tomtom/tcomment_vim'
 
 call plug#end()
 
@@ -35,10 +37,6 @@ set shell=/bin/sh
 
 "Allow copying to OS X clipboard with CTRL+C
 :vmap <C-C> "+y"
-
-"Enable completion
-let g:deoplete#enable_at_startup = 1
-set completeopt+=noinsert
 
 "Remap escaping for built in terminal
 tnoremap <Esc> <C-\><C-n>
