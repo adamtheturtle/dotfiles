@@ -1,3 +1,6 @@
+"Install as per
+"https://github.com/junegunn/vim-plug#installation
+"Then :PlugInstall
 call plug#begin('~/.config/nvim/plug')
 
 Plug 'mitsuhiko/vim-python-combined'
