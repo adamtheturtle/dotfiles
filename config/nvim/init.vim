@@ -21,6 +21,8 @@ Plug 'Valloric/YouCompleteMe'
 "Allow the use of `gc` to comment selected text.
 Plug 'tomtom/tcomment_vim'
 
+"Highlight trailing whitespace and then introduce a command to strip it
+Plug 'ntpeters/vim-better-whitespace'
 call plug#end()
 
 colorscheme gruvbox
