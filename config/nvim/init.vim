@@ -32,16 +32,16 @@ let g:ctrlp_extensions = ['funky']
 nmap <C-k> <Plug>CtrlSFPrompt
 
 "Show line numbers
-:set number
+set number
 
 "vim has issues if fish is the shell used to run commands
 set shell=/bin/sh
 
 "Allow copying by selecting with mouse to OS X clipboard
-:set mouse+=a
+set mouse+=a
 
 "Allow copying to OS X clipboard with CTRL+C
-:vmap <C-C> "+y"
+vmap <C-C> "+y"
 
 "Remap escaping for built in terminal
 tnoremap <Esc> <C-\><C-n>
