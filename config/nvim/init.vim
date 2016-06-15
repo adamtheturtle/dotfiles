@@ -23,11 +23,16 @@ Plug 'tomtom/tcomment_vim'
 
 "Highlight trailing whitespace and then introduce a command to strip it
 Plug 'ntpeters/vim-better-whitespace'
+
+"Show the current class / method etc.
+"Requires `brew install ctags` and a `let` as below (search for tagbar)
+Plug 'majutsushi/tagbar'
 call plug#end()
 
 colorscheme gruvbox
 set background=dark
 
+let g:tagbar_ctags_bin = '/usr/local/Cellar/ctags/5.8_1/bin/ctags'
 let g:ctrlp_extensions = ['funky']
 nmap <C-k> <Plug>CtrlSFPrompt
 
@@ -58,4 +63,7 @@ au FocusLost,WinLeave * :silent! wa
 
 " Trigger autoread when changing buffers or coming back to vim.
 au FocusGained,BufEnter * :silent! !
+
+"Enter insert mode when going into a :terminal split
+autocmd WinEnter term://* startinsert
 
