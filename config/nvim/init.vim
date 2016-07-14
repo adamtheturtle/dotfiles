@@ -39,6 +39,9 @@ nmap <C-k> <Plug>CtrlSFPrompt
 "Show line numbers
 set number
 
+"Highlight Python builtins
+let python_highlight_all = 1
+
 "vim has issues if fish is the shell used to run commands
 set shell=/bin/sh
 
