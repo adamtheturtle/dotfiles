@@ -70,3 +70,8 @@ au FocusGained,BufEnter * :silent! !
 "Enter insert mode when going into a :terminal split
 autocmd WinEnter term://* startinsert
 
+"Python 3 support for Syntastic
+let g:syntastic_python_python_exec = '/usr/local/bin/python3'
+
+" let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+" let $PATH = '/usr/local/bin:'.$PATH
