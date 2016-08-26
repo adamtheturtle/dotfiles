@@ -3,3 +3,4 @@ set -gx PATH $PATH ~/.local/bin
 set -Ux LSCOLORS gxfxbEaEBxxEhEhBaDaCaD
 alias vim=nvim
 eval (python -m virtualfish)
+set -gx EDITOR vim
