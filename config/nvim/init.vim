@@ -49,6 +49,7 @@ set shell=/bin/sh
 set mouse+=a
 
 "Allow copying to OS X clipboard with CTRL+C
+"This doesn't work in tmux
 vmap <C-C> "+y"
 
 "Remap escaping for built in terminal
