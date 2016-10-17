@@ -72,6 +72,9 @@ autocmd WinEnter term://* startinsert
 
 "Python 3 support for Syntastic
 let g:syntastic_python_python_exec = '/usr/local/bin/python3'
+"Make sure to have these checkers on the $PATH
+"e.g. by using `pipsi`
+let g:syntastic_python_checkers = ['pylint', 'flake8']
 
-" let g:ycm_path_to_python_interpreter = '/usr/bin/python'
-" let $PATH = '/usr/local/bin:'.$PATH
+"Without this I get an error when opening a result from CtrlSF
+let g:ctrlsf_confirm_unsaving_quit = 1
