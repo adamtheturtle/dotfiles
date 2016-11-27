@@ -16,6 +16,8 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'tacahiroy/ctrlp-funky'
+"Fish shell script highlighting
+Plug 'dag/vim-fish'
 "Enable completion
 "See https://github.com/Valloric/YouCompleteMe#mac-os-x
 "for compilation requirements.
