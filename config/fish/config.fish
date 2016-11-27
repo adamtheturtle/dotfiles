@@ -8,3 +8,7 @@ set -gx EDITOR vim
 # See https://github.com/neovim/neovim/issues/5348
 set -x 'VIMRUNTIME' ''
 set -x 'VIM' ''
+
+# To get a virtualfish prompt, run:
+# 	`fisher install adamtheturtle/virtualfish-prompt`
+functions -q virtualfish_prompt; and virtualfish_prompt
