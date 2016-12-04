@@ -12,6 +12,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'ctrlpvim/ctrlp.vim'
+"Requires `brew install ack`
 Plug 'dyng/ctrlsf.vim'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
@@ -36,6 +37,7 @@ call plug#end()
 colorscheme gruvbox
 set background=dark
 
+"Requires `brew install ctags`
 let g:tagbar_ctags_bin = '/usr/local/Cellar/ctags/5.8_1/bin/ctags'
 let g:ctrlp_extensions = ['funky']
 nmap <C-k> <Plug>CtrlSFPrompt
