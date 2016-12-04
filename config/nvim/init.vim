@@ -52,6 +52,10 @@ set shell=/bin/sh
 "Allow copying by selecting with mouse to OS X clipboard
 set mouse+=a
 
+"Disable swapfile
+set noswapfile
+set nobackup
+
 "Allow copying to OS X clipboard with CTRL+C
 "This doesn't work in tmux
 vmap <C-C> "+y"
