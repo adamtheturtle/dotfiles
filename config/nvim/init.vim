@@ -64,6 +64,7 @@ vmap <C-C> "+y"
 
 "Remap escaping for built in terminal
 tnoremap <Esc> <C-\><C-n>
+tnoremap <C-w> <C-\><C-n><C-w>
 
 "Indenting suitable for Python
 set autoindent
