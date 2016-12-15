@@ -91,3 +91,11 @@ let g:syntastic_python_checkers = ['flake8']
 
 "Without this I get an error when opening a result from CtrlSF
 let g:ctrlsf_confirm_unsaving_quit = 1
+
+"Double tap \ to set a PDB
+map <Leader><Leader> :call InsertPDB()<CR>
+
+function! InsertPDB()
+  let trace = expand("import pdb; pdb.set_trace()")
+  execute "normal o".trace
+endfunction
