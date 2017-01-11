@@ -32,6 +32,12 @@ Plug 'ntpeters/vim-better-whitespace'
 "Show the current class / method etc.
 "Requires `brew install ctags` and a `let` as below (search for tagbar)
 Plug 'majutsushi/tagbar'
+
+"Allow pytest to be run
+Plug 'alfredodeza/pytest.vim'
+
+"Sort Python imports
+Plug 'fisadev/vim-isort'
 call plug#end()
 
 colorscheme gruvbox
@@ -87,7 +93,7 @@ let g:syntastic_python_python_exec = '/usr/local/bin/python3'
 "Make sure to have these checkers on the $PATH
 "e.g. by using `pipsi`.
 "Make sure to install these checkers with the right Python version.
-let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_checkers = ['flake8', 'mypy']
 
 "Without this I get an error when opening a result from CtrlSF
 let g:ctrlsf_confirm_unsaving_quit = 1
@@ -99,3 +105,12 @@ function! InsertPDB()
   let trace = expand("import pdb; pdb.set_trace()")
   execute "normal o".trace
 endfunction
+
+"Run Pytest for the file with \ + f
+nmap <silent><Leader>f <Esc>:Pytest file<CR>
+
+"Use Ctrl + i to sort Python imports
+let g:vim_isort_map = '<C-i>'
+
+"Map \y to autoformat this Python file
+map <Leader>y :0,$!yapf<CR>
