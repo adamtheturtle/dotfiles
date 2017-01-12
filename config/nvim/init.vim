@@ -112,5 +112,5 @@ nmap <silent><Leader>f <Esc>:Pytest file<CR>
 "Use Ctrl + i to sort Python imports
 let g:vim_isort_map = '<C-i>'
 
-"Map \y to autoformat this Python file
-map <Leader>y :0,$!yapf<CR>
+"Map \y to autoformat this Python file and move back to the current position
+map <Leader>y :0,$!yapf<CR><C-o>
