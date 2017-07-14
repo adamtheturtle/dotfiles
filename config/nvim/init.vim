@@ -38,6 +38,13 @@ Plug 'alfredodeza/pytest.vim'
 
 "Sort Python imports
 Plug 'fisadev/vim-isort'
+
+"Fast window choosing.
+Plug 't9md/vim-choosewin'
+
+"Maximizes and restores the current window
+Plug 'szw/vim-maximizer'
+
 call plug#end()
 
 colorscheme gruvbox
@@ -93,6 +100,8 @@ let g:syntastic_python_python_exec = '/usr/local/bin/python3'
 "Make sure to have these checkers on the $PATH
 "e.g. by using `pipsi`.
 "Make sure to install these checkers with the right Python version.
+"e.g. `pipsi install --python=(which python3) mypy`
+"We don't use `pylint` because it is too slow.
 let g:syntastic_python_checkers = ['flake8', 'mypy']
 
 "Without this I get an error when opening a result from CtrlSF
@@ -114,3 +123,9 @@ let g:vim_isort_map = '<C-i>'
 
 "Map \y to autoformat this Python file and move back to the current position
 map <Leader>y :0,$!yapf<CR><C-o>
+
+let g:python_host_skip_check = 1
+
+"Show overlay on '-' for choosong window.
+nmap  -  <Plug>(choosewin)
+let g:choosewin_overlay_enable = 1
