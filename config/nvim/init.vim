@@ -126,6 +126,12 @@ map <Leader>y :0,$!yapf<CR><C-o>
 
 let g:python_host_skip_check = 1
 
-"Show overlay on '-' for choosong window.
+"Show overlay on '-' for choosing window.
 nmap  -  <Plug>(choosewin)
-let g:choosewin_overlay_enable = 1
+let g:choosewin_overlay_enable = 0
+
+"choosewin adds whitespace in files.
+"Strip whitespace when entering files.
+:autocmd BufEnter * :StripWhitespace
+:autocmd WinEnter * :StripWhitespace
+
