@@ -8,21 +8,30 @@ Plug 'rust-lang/rust.vim'
 Plug 'mitsuhiko/vim-python-combined'
 Plug 'flazz/vim-colorschemes'
 Plug 'scrooloose/syntastic'
+
+"Autocomplete quotes and brackets
 Plug 'Raimondi/delimitMate'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
+
+"Quick switching between files
 Plug 'ctrlpvim/ctrlp.vim'
+
 "Requires `brew install ack`
 Plug 'dyng/ctrlsf.vim'
+
+"A custom status bar
 Plug 'bling/vim-airline'
+
 Plug 'tpope/vim-fugitive'
+
 Plug 'tacahiroy/ctrlp-funky'
+
 "Fish shell script highlighting
 Plug 'dag/vim-fish'
 "Enable completion
 "See https://github.com/Valloric/YouCompleteMe#mac-os-x
 "for compilation requirements.
 Plug 'Valloric/YouCompleteMe'
+
 "Allow the use of `gc` to comment selected text.
 Plug 'tomtom/tcomment_vim'
 
@@ -44,6 +53,10 @@ Plug 't9md/vim-choosewin'
 
 "Maximizes and restores the current window
 Plug 'szw/vim-maximizer'
+
+"Live preview of search and replace
+Plug 'osyo-manga/vim-over'
+set inccommand=nosplit
 
 call plug#end()
 
@@ -115,23 +128,12 @@ function! InsertPDB()
   execute "normal o".trace
 endfunction
 
-"Run Pytest for the file with \ + f
-nmap <silent><Leader>f <Esc>:Pytest file<CR>
-
-"Use Ctrl + i to sort Python imports
-let g:vim_isort_map = '<C-i>'
-
 "Map \y to autoformat this Python file and move back to the current position
 map <Leader>y :0,$!yapf<CR><C-o>
 
 let g:python_host_skip_check = 1
 
-"Show overlay on '-' for choosing window.
+"Do not show overlay on '-' for choosing window.
+"Showing an overlay caused random whitespace issues.
 nmap  -  <Plug>(choosewin)
 let g:choosewin_overlay_enable = 0
-
-"choosewin adds whitespace in files.
-"Strip whitespace when entering files.
-:autocmd BufEnter * :StripWhitespace
-:autocmd WinEnter * :StripWhitespace
-
