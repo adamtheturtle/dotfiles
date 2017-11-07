@@ -80,9 +80,6 @@ set nobackup
 "This doesn't work in tmux
 vmap <C-C> "+y"
 
-" Share clipboard with macOS
-" set clipboard=unnamed
-
 "Remap escaping for built in terminal
 tnoremap <Esc> <C-\><C-n>
 tnoremap <C-w> <C-\><C-n><C-w>
@@ -102,15 +99,6 @@ au FocusGained,BufEnter * :silent! !
 
 "Enter insert mode when going into a :terminal split
 autocmd WinEnter term://* startinsert
-
-"Python 3 support for Syntastic
-" let g:syntastic_python_python_exec = '/usr/local/bin/python3'
-"Make sure to have these checkers on the $PATH
-"e.g. by using `pipsi`.
-"Make sure to install these checkers with the right Python version.
-"e.g. `pipsi install --python=(which python3) mypy`
-"We don't use `pylint` because it is too slow.
-" let g:syntastic_python_checkers = ['flake8', 'mypy']
 
 "Without this I get an error when opening a result from CtrlSF
 let g:ctrlsf_confirm_unsaving_quit = 1
