@@ -1,4 +1,5 @@
 set -gx PATH $PATH ~/.local/bin
+set -gx PATH $PATH ~/.cargo/bin
 # Set `ls` output to be teal
 set -Ux LSCOLORS gxfxbEaEBxxEhEhBaDaCaD
 alias vim=nvim
