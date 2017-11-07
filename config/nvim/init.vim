@@ -5,9 +5,7 @@ call plug#begin('~/.config/nvim/plug')
 
 "Rust syntax highlighting
 Plug 'rust-lang/rust.vim'
-Plug 'mitsuhiko/vim-python-combined'
 Plug 'flazz/vim-colorschemes'
-Plug 'scrooloose/syntastic'
 
 "Autocomplete quotes and brackets
 Plug 'Raimondi/delimitMate'
