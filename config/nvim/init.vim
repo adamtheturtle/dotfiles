@@ -19,8 +19,6 @@ Plug 'dyng/ctrlsf.vim'
 "A custom status bar
 Plug 'bling/vim-airline'
 
-Plug 'tpope/vim-fugitive'
-
 Plug 'tacahiroy/ctrlp-funky'
 
 "Fish shell script highlighting
@@ -36,13 +34,6 @@ Plug 'tomtom/tcomment_vim'
 "Highlight trailing whitespace and then introduce a command to strip it
 Plug 'ntpeters/vim-better-whitespace'
 
-"Show the current class / method etc.
-"Requires `brew install ctags` and a `let` as below (search for tagbar)
-Plug 'majutsushi/tagbar'
-
-"Allow pytest to be run
-Plug 'alfredodeza/pytest.vim'
-
 "Sort Python imports
 Plug 'fisadev/vim-isort'
 
@@ -53,7 +44,12 @@ Plug 't9md/vim-choosewin'
 Plug 'szw/vim-maximizer'
 
 "Live preview of search and replace
-Plug 'osyo-manga/vim-over'
+" Plug 'osyo-manga/vim-over'
+
+Plug 'terryma/vim-multiple-cursors'
+
+Plug 'w0rp/ale'
+
 set inccommand=nosplit
 
 call plug#end()
@@ -61,8 +57,6 @@ call plug#end()
 colorscheme gruvbox
 set background=dark
 
-"Requires `brew install ctags`
-let g:tagbar_ctags_bin = '/usr/local/Cellar/ctags/5.8_1/bin/ctags'
 let g:ctrlp_extensions = ['funky']
 nmap <C-k> <Plug>CtrlSFPrompt
 
@@ -86,6 +80,9 @@ set nobackup
 "This doesn't work in tmux
 vmap <C-C> "+y"
 
+" Share clipboard with macOS
+" set clipboard=unnamed
+
 "Remap escaping for built in terminal
 tnoremap <Esc> <C-\><C-n>
 tnoremap <C-w> <C-\><C-n><C-w>
@@ -107,13 +104,13 @@ au FocusGained,BufEnter * :silent! !
 autocmd WinEnter term://* startinsert
 
 "Python 3 support for Syntastic
-let g:syntastic_python_python_exec = '/usr/local/bin/python3'
+" let g:syntastic_python_python_exec = '/usr/local/bin/python3'
 "Make sure to have these checkers on the $PATH
 "e.g. by using `pipsi`.
 "Make sure to install these checkers with the right Python version.
 "e.g. `pipsi install --python=(which python3) mypy`
 "We don't use `pylint` because it is too slow.
-let g:syntastic_python_checkers = ['flake8', 'mypy']
+" let g:syntastic_python_checkers = ['flake8', 'mypy']
 
 "Without this I get an error when opening a result from CtrlSF
 let g:ctrlsf_confirm_unsaving_quit = 1
@@ -135,3 +132,5 @@ let g:python_host_skip_check = 1
 "Showing an overlay caused random whitespace issues.
 nmap  -  <Plug>(choosewin)
 let g:choosewin_overlay_enable = 0
+
+set colorcolumn=80
