@@ -16,11 +16,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 "Requires `brew install ack`
 Plug 'dyng/ctrlsf.vim'
 
-"A custom status bar
-Plug 'bling/vim-airline'
-
-Plug 'tacahiroy/ctrlp-funky'
-
 "Fish shell script highlighting
 Plug 'dag/vim-fish'
 "Enable completion
@@ -44,7 +39,7 @@ Plug 't9md/vim-choosewin'
 Plug 'szw/vim-maximizer'
 
 "Live preview of search and replace
-" Plug 'osyo-manga/vim-over'
+Plug 'osyo-manga/vim-over'
 
 Plug 'terryma/vim-multiple-cursors'
 
@@ -57,7 +52,7 @@ call plug#end()
 colorscheme gruvbox
 set background=dark
 
-let g:ctrlp_extensions = ['funky']
+let g:ctrlp_extensions = []
 nmap <C-k> <Plug>CtrlSFPrompt
 
 "Show line numbers
@@ -122,3 +117,6 @@ nmap  -  <Plug>(choosewin)
 let g:choosewin_overlay_enable = 0
 
 set colorcolumn=80
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+
+au TermOpen * setlocal nonumber norelativenumber
