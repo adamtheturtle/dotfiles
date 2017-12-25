@@ -17,3 +17,4 @@ functions -q virtualfish_prompt; and virtualfish_prompt
 
 eval (direnv hook fish)
 clear
+set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
