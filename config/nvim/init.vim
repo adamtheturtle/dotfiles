@@ -117,6 +117,5 @@ nmap  -  <Plug>(choosewin)
 let g:choosewin_overlay_enable = 0
 
 set colorcolumn=80
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
 au TermOpen * setlocal nonumber norelativenumber
