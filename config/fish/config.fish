@@ -1,3 +1,4 @@
+set -gx GPG_TTY $tty
 set -gx PATH $PATH ~/.local/bin
 set -gx PATH $PATH ~/.cargo/bin
 # Set `ls` output to be teal
