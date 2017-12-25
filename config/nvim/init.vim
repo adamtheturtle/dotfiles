@@ -55,7 +55,7 @@ colorscheme gruvbox
 set background=dark
 
 let g:ctrlp_extensions = []
-nmap <C-k> <Plug>CtrlSFPrompt
+nmap <C-k> :silent CtrlSF<space>
 
 "Show line numbers
 set number
