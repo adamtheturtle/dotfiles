@@ -45,6 +45,8 @@ Plug 'terryma/vim-multiple-cursors'
 
 Plug 'w0rp/ale'
 
+Plug 'Vimjas/vim-python-pep8-indent'
+
 set inccommand=nosplit
 
 call plug#end()
