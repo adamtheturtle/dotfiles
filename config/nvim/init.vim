@@ -120,4 +120,7 @@ let g:choosewin_overlay_enable = 0
 
 set colorcolumn=80
 
+"Do not prompt before searching.
+let ctrlsf_confirm_save = 0
+
 au TermOpen * setlocal nonumber norelativenumber
