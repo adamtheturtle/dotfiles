@@ -18,3 +18,6 @@ functions -q virtualfish_prompt; and virtualfish_prompt
 eval (direnv hook fish)
 clear
 set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
+
+# added by pipsi (https://github.com/mitsuhiko/pipsi)
+set -x PATH /Users/Adam/.local/bin $PATH
