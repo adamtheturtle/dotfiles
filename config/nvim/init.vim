@@ -47,6 +47,8 @@ Plug 'w0rp/ale'
 
 Plug 'Vimjas/vim-python-pep8-indent'
 
+Plug 'dhruvasagar/vim-zoom'
+
 set inccommand=nosplit
 
 call plug#end()
