@@ -29,9 +29,6 @@ Plug 'tomtom/tcomment_vim'
 "Highlight trailing whitespace and then introduce a command to strip it
 Plug 'ntpeters/vim-better-whitespace'
 
-"Sort Python imports
-Plug 'fisadev/vim-isort'
-
 "Fast window choosing.
 Plug 't9md/vim-choosewin'
 
