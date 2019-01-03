@@ -8,4 +8,5 @@ repository = https://test.pypi.org/legacy/
 username = adamtheturtle
 
 [pypi]
+repository = https://upload.pypi.org/legacy/
 username = adamtheturtle
