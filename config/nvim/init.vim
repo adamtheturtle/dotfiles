@@ -11,7 +11,9 @@ Plug 'flazz/vim-colorschemes'
 Plug 'Raimondi/delimitMate'
 
 "Quick switching between files
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+nnoremap <C-p> :Files<Cr>
 
 "Requires `brew install ack`
 Plug 'dyng/ctrlsf.vim'
