@@ -34,13 +34,8 @@ Plug 'ntpeters/vim-better-whitespace'
 "Fast window choosing.
 Plug 't9md/vim-choosewin'
 
-"Maximizes and restores the current window
-Plug 'szw/vim-maximizer'
-
 "Live preview of search and replace
 Plug 'osyo-manga/vim-over'
-
-Plug 'terryma/vim-multiple-cursors'
 
 Plug 'w0rp/ale'
 
@@ -108,9 +103,6 @@ function! InsertPDB()
   let trace = expand("import pdb; pdb.set_trace()")
   execute "normal o".trace
 endfunction
-
-"Map \y to autoformat this Python file and move back to the current position
-map <Leader>y :0,$!yapf<CR><C-o>
 
 let g:python_host_skip_check = 1
 
