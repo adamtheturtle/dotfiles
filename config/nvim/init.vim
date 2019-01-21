@@ -117,3 +117,5 @@ set colorcolumn=80
 let ctrlsf_confirm_save = 0
 
 au TermOpen * setlocal nonumber norelativenumber
+
+set nofoldenable
