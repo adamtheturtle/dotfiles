@@ -11,9 +11,6 @@ set -gx EDITOR vim
 set -x 'VIMRUNTIME' ''
 set -x 'VIM' ''
 
-# To get a virtualfish prompt, run:
-# 	`fisher install adamtheturtle/virtualfish-prompt`
-functions -q virtualfish_prompt; and virtualfish_prompt
 
 eval (direnv hook fish)
 clear
@@ -23,3 +20,23 @@ set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 set -x PATH /Users/Adam/.local/bin $PATH
 
 set fish_greeting
+
+function fish_prompt
+    set_color yellow
+    printf '%s' (whoami)
+    set_color normal
+
+  set_color magenta
+    printf ' in '
+
+  set_color $fish_color_cwd
+    printf '%s ' (prompt_pwd)
+    set_color normal
+
+  # Line 2
+	if set -q VIRTUAL_ENV
+		echo -n -s (set_color -b blue white) "(" (basename "$VIRTUAL_ENV") ")" (set_color normal) " "
+	end
+    printf '~> '
+    set_color normal
+end
