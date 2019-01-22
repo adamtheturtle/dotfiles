@@ -22,13 +22,6 @@ set -x PATH /Users/Adam/.local/bin $PATH
 set fish_greeting
 
 function fish_prompt
-    set_color yellow
-    printf '%s' (whoami)
-    set_color normal
-
-  set_color magenta
-    printf ' in '
-
   set_color $fish_color_cwd
     printf '%s ' (prompt_pwd)
     set_color normal
