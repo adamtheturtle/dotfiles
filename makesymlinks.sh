@@ -16,7 +16,8 @@ files="config/fish/config.fish config/nvim/init.vim tmux.conf ssh/config pypirc"
 
 # create dotfiles_old in homedir
 echo -n "Creating $olddir for backup of any existing dotfiles in ~ ..."
-mkdir -p $olddir
+rm -rf $olddir
+mkdir $olddir
 echo "done"
 
 # change to the dotfiles directory
