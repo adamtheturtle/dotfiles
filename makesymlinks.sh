@@ -4,6 +4,8 @@
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
 ############################
 
+set -euxo pipefail
+
 ########## Variables
 
 dir=~/Documents/dotfiles                    # dotfiles directory
