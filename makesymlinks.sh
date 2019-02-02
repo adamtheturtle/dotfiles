@@ -32,7 +32,7 @@ for file in $files; do
     echo "Moving any existing dotfiles from ~ to $olddir"
     mv ~/.$file $olddir || true
     echo "Creating symlink to $file in home directory."
-    dir=$(dirname ~/.$file)
-    mkdir -p $dir
+    containing_dir=$(dirname ~/.$file)
+    mkdir -p $containing_dir
     ln -s $dir/$file ~/.$file
 done
