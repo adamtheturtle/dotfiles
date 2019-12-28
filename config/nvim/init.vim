@@ -20,10 +20,9 @@ Plug 'dyng/ctrlsf.vim'
 
 "Fish shell script highlighting
 Plug 'dag/vim-fish'
+
 "Enable completion
-"See https://github.com/Valloric/YouCompleteMe#mac-os-x
-"for compilation requirements.
-Plug 'Valloric/YouCompleteMe'
+Plug 'zxqfl/tabnine-vim'
 
 "Allow the use of `gc` to comment selected text.
 Plug 'tomtom/tcomment_vim'
