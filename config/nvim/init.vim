@@ -42,6 +42,9 @@ Plug 'Vimjas/vim-python-pep8-indent'
 
 Plug 'dhruvasagar/vim-zoom'
 
+Plug 'camspiers/animate.vim'
+Plug 'camspiers/lens.vim'
+
 set inccommand=nosplit
 
 call plug#end()
