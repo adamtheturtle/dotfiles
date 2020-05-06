@@ -45,6 +45,8 @@ Plug 'dhruvasagar/vim-zoom'
 Plug 'camspiers/animate.vim'
 Plug 'camspiers/lens.vim'
 
+Plug 'Matt-Deacalion/vim-systemd-syntax'
+
 set inccommand=nosplit
 
 call plug#end()
