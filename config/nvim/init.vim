@@ -46,6 +46,7 @@ Plug 'camspiers/animate.vim'
 Plug 'camspiers/lens.vim'
 
 Plug 'Matt-Deacalion/vim-systemd-syntax'
+Plug 'chr4/nginx.vim'
 
 set inccommand=nosplit
 
