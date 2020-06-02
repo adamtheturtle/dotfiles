@@ -4,7 +4,6 @@ set -gx PATH $PATH ~/.cargo/bin
 # Set `ls` output to be teal
 set -Ux LSCOLORS gxfxbEaEBxxEhEhBaDaCaD
 alias vim=nvim
-eval (python3 -m virtualfish)
 set -gx EDITOR vim
 
 # See https://github.com/neovim/neovim/issues/5348
