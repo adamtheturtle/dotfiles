@@ -48,7 +48,8 @@ Plug 'camspiers/lens.vim'
 Plug 'Matt-Deacalion/vim-systemd-syntax'
 Plug 'chr4/nginx.vim'
 
-set inccommand=nosplit
+Plug 'cespare/vim-toml'
+
 
 call plug#end()
 
@@ -124,3 +125,6 @@ let ctrlsf_confirm_save = 0
 au TermOpen * setlocal nonumber norelativenumber
 
 set nofoldenable
+
+"Live highlighting of substitutions
+set inccommand=nosplit
