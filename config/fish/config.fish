@@ -10,10 +10,14 @@ set -gx EDITOR vim
 set -x 'VIMRUNTIME' ''
 set -x 'VIM' ''
 
+eval (/opt/homebrew/bin/brew shellenv)
+
 set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 
 # added by pipsi (https://github.com/mitsuhiko/pipsi)
 set -x PATH /Users/Adam/.local/bin $PATH
+
+status --is-interactive; and source (rbenv init -|psub)
 
 set fish_greeting
 
