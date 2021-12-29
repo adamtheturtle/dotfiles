@@ -22,7 +22,7 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'dag/vim-fish'
 
 "Enable completion
-Plug 'zxqfl/tabnine-vim'
+Plug 'github/copilot.vim'
 
 "Allow the use of `gc` to comment selected text.
 Plug 'tomtom/tcomment_vim'
