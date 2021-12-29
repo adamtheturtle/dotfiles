@@ -17,8 +17,6 @@ set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 # added by pipsi (https://github.com/mitsuhiko/pipsi)
 set -x PATH /Users/Adam/.local/bin $PATH
 
-status --is-interactive; and source (rbenv init -|psub)
-
 set fish_greeting
 
 function fish_prompt
