@@ -128,3 +128,5 @@ set nofoldenable
 
 "Live highlighting of substitutions
 set inccommand=nosplit
+
+let g:copilot_node_command = '/opt/homebrew/opt/node@16/bin/node'
