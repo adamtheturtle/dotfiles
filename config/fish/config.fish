@@ -1,3 +1,5 @@
+#!/usr/bin/env fish
+
 set -gx GPG_TTY $tty
 set -gx PATH $PATH ~/.local/bin
 set -gx PATH $PATH ~/.cargo/bin
@@ -10,12 +12,11 @@ set -gx EDITOR vim
 set -x 'VIMRUNTIME' ''
 set -x 'VIM' ''
 
-eval (/opt/homebrew/bin/brew shellenv)
+if status --is-interactive
+  eval (/opt/homebrew/bin/brew shellenv)
+end
 
 set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
-
-# added by pipsi (https://github.com/mitsuhiko/pipsi)
-set -x PATH /Users/Adam/.local/bin $PATH
 
 set fish_greeting
 
