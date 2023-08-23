@@ -29,19 +29,10 @@ set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 
 set fish_greeting
 
+functions --copy fish_prompt default_fish_prompt
 function fish_prompt
-  set_color $fish_color_cwd
-    printf '%s ' (prompt_pwd)
-    set_color normal
-
-    # This is from
-    # https://virtualfish.readthedocs.io/en/latest/install.html#customizing-your-fish-prompt
-    if set -q VIRTUAL_ENV
-        echo -n -s (set_color -b blue white) "(" (basename "$VIRTUAL_ENV") ")" (set_color normal) " "
-    end
-
-    printf '~> '
-    set_color normal
+    virtualfish_prompt
+    default_fish_prompt
 end
 
 # Put pyenv environments on the PATH.
