@@ -34,10 +34,16 @@ function fish_prompt
     printf '%s ' (prompt_pwd)
     set_color normal
 
-  # Line 2
-	if set -q VIRTUAL_ENV
-		echo -n -s (set_color -b blue white) "(" (basename "$VIRTUAL_ENV") ")" (set_color normal) " "
-	end
+    # This is from
+    # https://virtualfish.readthedocs.io/en/latest/install.html#customizing-your-fish-prompt
+    if set -q VIRTUAL_ENV
+        echo -n -s (set_color -b blue white) "(" (basename "$VIRTUAL_ENV") ")" (set_color normal) " "
+    end
+
     printf '~> '
     set_color normal
 end
+
+# Put pyenv environments on the PATH.
+# This is useful e.g. for tox.
+pyenv init - | source
