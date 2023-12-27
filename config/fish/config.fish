@@ -38,3 +38,11 @@ end
 # Put pyenv environments on the PATH.
 # This is useful e.g. for tox.
 pyenv init - | source
+
+status --is-interactive; and rbenv init - fish | source
+
+# Workaround for
+# https://github.com/pyenchant/pyenchant/issues/265#issuecomment-1126415843
+# We can remove this when pyenchant https://github.com/pyenchant/pyenchant/pull/302
+# is released.
+set -gx PYENCHANT_LIBRARY_PATH "/opt/homebrew/lib/libenchant-2.dylib"
