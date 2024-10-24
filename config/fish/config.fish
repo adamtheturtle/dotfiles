@@ -14,6 +14,7 @@ eval (/opt/homebrew/bin/brew shellenv)
 
 set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 
+# Do not have a greeting message on each shell.
 set fish_greeting
 
 status --is-interactive; and rbenv init - fish | source
