@@ -10,7 +10,7 @@ set -euxo pipefail
 
 dir=~/Documents/dotfiles                    # dotfiles directory
 olddir=~/Documents/dotfiles_old             # old dotfiles backup directory
-files="config/fish/config.fish config/nvim/init.vim tmux.conf ssh/config pypirc"    # list of files/folders to symlink in homedir
+files="config/fish/config.fish config/nvim/init.vim tmux.conf ssh/config pypirc config/zed/settings.json"    # list of files/folders to symlink in homedir
 
 ##########
 
