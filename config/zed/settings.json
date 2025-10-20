@@ -11,10 +11,13 @@
     "always_allow_tool_actions": true,
     "default_profile": "write",
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4-5"
+      "provider": "copilot_chat",
+      "model": "gpt-5"
     },
     "model_parameters": []
+  },
+  "vim": {
+    "use_system_clipboard": "never"
   },
   "vim_mode": true,
   "ui_font_size": 16,
