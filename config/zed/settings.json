@@ -7,6 +7,11 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "agent_servers": {
+    "claude": {
+      "default_mode": "acceptEdits"
+    }
+  },
   "agent": {
     "always_allow_tool_actions": true,
     "default_profile": "write",
@@ -26,6 +31,9 @@
     "reST": {
       "enable_language_server": false,
       "tab_size": 3
+    },
+    "Java": {
+      "format_on_save": "off"
     },
     "Python": {
       "language_servers": ["ruff", "basedpyright"],
