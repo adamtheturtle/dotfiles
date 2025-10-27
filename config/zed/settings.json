@@ -36,7 +36,10 @@
       "format_on_save": "off"
     },
     "Python": {
-      "language_servers": ["ruff", "basedpyright"],
+      "language_servers": [
+        "ruff",
+        "basedpyright"
+      ],
       "format_on_save": "on",
       "formatter": [
         {
@@ -45,6 +48,11 @@
           }
         }
       ]
+    }
+  },
+  "terminal": {
+    "shell": {
+      "program": "/opt/homebrew/bin/fish"
     }
   }
 }
