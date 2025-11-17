@@ -6,6 +6,8 @@ set -Ux LSCOLORS gxfxbEaEBxxEhEhBaDaCaD
 alias vim=nvim
 set -gx EDITOR vim
 
+set -gx DOTNET_ROOT /usr/local/share/dotnet
+
 # See https://github.com/neovim/neovim/issues/5348
 set -x 'VIMRUNTIME' ''
 set -x 'VIM' ''
