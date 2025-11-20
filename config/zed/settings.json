@@ -16,6 +16,7 @@
     }
   },
   "agent": {
+    "dock": "right",
     "always_allow_tool_actions": true,
     "default_profile": "write",
     "default_model": {
@@ -37,6 +38,18 @@
     },
     "Java": {
       "format_on_save": "off"
+    },
+    "TOML": {
+      "formatter": {
+        "external": {
+          "command": "sh",
+          "arguments": [
+            "-c",
+            "input=$(cat); if echo \"$input\" | grep -q '^\\[project\\]\\|^\\[build-system\\]'; then echo \"$input\" | uvx pyproject-fmt - || true; else echo \"$input\"; fi"
+          ]
+        }
+      },
+      "format_on_save": "on"
     },
     "Python": {
       "language_servers": ["ruff", "basedpyright"],
