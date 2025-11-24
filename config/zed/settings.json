@@ -45,7 +45,7 @@
           "command": "sh",
           "arguments": [
             "-c",
-            "input=$(cat); if echo \"$input\" | grep -q '^\\[project\\]\\|^\\[build-system\\]'; then echo \"$input\" | uvx pyproject-fmt - || true; else echo \"$input\"; fi"
+            "tmp=$(mktemp); cat > \"$tmp\"; if grep -q \"^\\[project\\]\\|^\\[build-system\\]\" \"$tmp\"; then uvx pyproject-fmt - < \"$tmp\"; else cat \"$tmp\"; fi; rm -f \"$tmp\""
           ]
         }
       },
