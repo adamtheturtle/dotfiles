@@ -20,3 +20,7 @@ set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 set fish_greeting
 
 status --is-interactive; and rbenv init - fish | source
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
