@@ -9,11 +9,11 @@
 {
   "agent_servers": {
     "codex": {
-      "default_mode": "full-access"
+      "default_mode": "full-access",
     },
     "claude": {
-      "default_mode": "bypassPermissions"
-    }
+      "default_mode": "bypassPermissions",
+    },
   },
   "agent": {
     "dock": "right",
@@ -21,12 +21,12 @@
     "default_profile": "write",
     "default_model": {
       "provider": "copilot_chat",
-      "model": "gpt-5"
+      "model": "gpt-5",
     },
-    "model_parameters": []
+    "model_parameters": [],
   },
   "vim": {
-    "use_system_clipboard": "never"
+    "use_system_clipboard": "never",
   },
   "vim_mode": true,
   "ui_font_size": 16,
@@ -34,10 +34,10 @@
   "languages": {
     "reST": {
       "enable_language_server": false,
-      "tab_size": 3
+      "tab_size": 3,
     },
     "Java": {
-      "format_on_save": "off"
+      "format_on_save": "off",
     },
     "TOML": {
       "formatter": {
@@ -45,27 +45,32 @@
           "command": "sh",
           "arguments": [
             "-c",
-            "tmp=$(mktemp); cat > \"$tmp\"; if grep -q \"^\\[project\\]\\|^\\[build-system\\]\" \"$tmp\"; then uvx pyproject-fmt \"$tmp\" >/dev/null 2>&1 && cat \"$tmp\" || cat \"$tmp\"; else cat \"$tmp\"; fi; rm -f \"$tmp\""
-          ]
-        }
+            "tmp=$(mktemp); cat > \"$tmp\"; if grep -q \"^\\[project\\]\\|^\\[build-system\\]\" \"$tmp\"; then uvx pyproject-fmt \"$tmp\" >/dev/null 2>&1 && cat \"$tmp\" || cat \"$tmp\"; else cat \"$tmp\"; fi; rm -f \"$tmp\"",
+          ],
+        },
       },
-      "format_on_save": "on"
+      "format_on_save": "on",
     },
     "Python": {
-      "language_servers": ["ruff", "basedpyright"],
+      "language_servers": [
+        "ty",
+        "ruff",
+        "pytest-language-server",
+        "!basedpyright",
+      ],
       "format_on_save": "on",
       "formatter": [
         {
           "language_server": {
-            "name": "ruff"
-          }
-        }
-      ]
-    }
+            "name": "ruff",
+          },
+        },
+      ],
+    },
   },
   "terminal": {
     "shell": {
-      "program": "/opt/homebrew/bin/fish"
-    }
-  }
+      "program": "/opt/homebrew/bin/fish",
+    },
+  },
 }
