@@ -50,7 +50,7 @@
           "command": "sh",
           "arguments": [
             "-c",
-            "tmp=$(mktemp); cat > \"$tmp\"; if grep -q \"^\\[project\\]\\|^\\[build-system\\]\" \"$tmp\"; then uvx pyproject-fmt \"$tmp\" >/dev/null 2>&1 && cat \"$tmp\" || cat \"$tmp\"; else cat \"$tmp\"; fi; rm -f \"$tmp\"",
+            "tmp=$(mktemp); cat > \"$tmp\"; if grep -q \"^\\[project\\]\\|^\\[build-system\\]\" \"$tmp\"; then if uv run --quiet pyproject-fmt --help >/dev/null 2>&1; then uv run --quiet pyproject-fmt \"$tmp\" >/dev/null 2>&1 && cat \"$tmp\" || cat \"$tmp\"; else uvx pyproject-fmt \"$tmp\" >/dev/null 2>&1 && cat \"$tmp\" || cat \"$tmp\"; fi; else cat \"$tmp\"; fi; rm -f \"$tmp\"",
           ],
         },
       },
