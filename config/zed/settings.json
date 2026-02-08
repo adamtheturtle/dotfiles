@@ -7,14 +7,16 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "features": {
-    "edit_prediction_provider": "copilot"
+  "edit_predictions": {
+    "provider": "copilot"
   },
   "agent_servers": {
     "codex": {
       "default_mode": "full-access",
     },
     "claude": {
+      "default_model": "opus",
+      "favorite_models": ["opus"],
       "default_mode": "bypassPermissions",
     },
   },
