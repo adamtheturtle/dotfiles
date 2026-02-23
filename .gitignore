@@ -1,1 +1,5 @@
 *.DS_Store
+
+# Never commit secrets (MCP config may contain PAT references)
+.env
+.mcp.json
