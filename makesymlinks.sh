@@ -1,36 +1,40 @@
 #!/bin/bash
-############################
-# .make.sh
-# This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
-############################
 
-set -euxo pipefail
+set -euo pipefail
 
-########## Variables
+dotfiles_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
+backup_root="$HOME/Documents/dotfiles_old"
+backup_dir=
+files=(
+    config/fish/config.fish
+    config/nvim/init.vim
+    tmux.conf
+    ssh/config
+    pypirc
+    config/zed/settings.json
+)
 
-dir=~/Documents/dotfiles                    # dotfiles directory
-olddir=~/Documents/dotfiles_old             # old dotfiles backup directory
-files="config/fish/config.fish config/nvim/init.vim tmux.conf ssh/config pypirc config/zed/settings.json"    # list of files/folders to symlink in homedir
+for file in "${files[@]}"; do
+    source="$dotfiles_dir/$file"
+    destination="$HOME/.$file"
+    if [[ -L "$destination" ]] && [[ "$(readlink "$destination")" == "$source" ]]; then
+        continue
+    fi
+    if [[ ! -f "$source" ]]; then
+        printf 'Missing dotfile: %s\n' "$source" >&2
+        exit 1
+    fi
 
-##########
-
-# create dotfiles_old in homedir
-echo -n "Creating $olddir for backup of any existing dotfiles in ~ ..."
-rm -rf $olddir
-mkdir $olddir
-echo "done"
-
-# change to the dotfiles directory
-echo -n "Changing to the $dir directory ..."
-cd $dir
-echo "done"
-
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks from the homedir to any files in the ~/dotfiles directory specified in $files
-for file in $files; do
-    echo "Moving any existing dotfiles from ~ to $olddir"
-    mv ~/.$file $olddir || true
-    echo "Creating symlink to $file in home directory."
-    containing_dir=$(dirname ~/.$file)
-    mkdir -p $containing_dir
-    ln -s $dir/$file ~/.$file
+    mkdir -p "$(dirname "$destination")"
+    if [[ -e "$destination" || -L "$destination" ]]; then
+        if [[ -z "$backup_dir" ]]; then
+            mkdir -p "$backup_root"
+            backup_dir="$(mktemp -d "$backup_root/backup.XXXXXXXX")"
+        fi
+        backup="$backup_dir/.$file"
+        mkdir -p "$(dirname "$backup")"
+        mv "$destination" "$backup"
+        printf 'Backed up %s to %s\n' "$destination" "$backup"
+    fi
+    ln -s "$source" "$destination"
 done
